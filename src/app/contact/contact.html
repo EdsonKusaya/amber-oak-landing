@@ -1,0 +1,79 @@
+<section id="contact" class="section section--sand">
+  <div class="container contact__inner">
+    <div class="contact__details">
+      <h2>Visit the workshop</h2>
+      <p>
+        Stop by during shop hours or write ahead to book a consultation slot.
+        We're a working shop, so please call before dropping in with a
+        trailer.
+      </p>
+
+      <ul class="contact__list">
+        <li>
+          <span class="contact__label">Address</span>
+          128 Millbrook Lane, Kingston, NY 12401
+        </li>
+        <li>
+          <span class="contact__label">Phone</span>
+          <a href="tel:+18455550142">(845) 555-0142</a>
+        </li>
+        <li>
+          <span class="contact__label">Email</span>
+          <a href="mailto:hello@amberandoak.example">hello&#64;amberandoak.example</a>
+        </li>
+        <li>
+          <span class="contact__label">Shop hours</span>
+          Tue–Fri, 9am–5pm · Sat by appointment
+        </li>
+      </ul>
+    </div>
+
+    <div class="contact__form-wrap">
+      @if (submitted()) {
+        <div class="contact__success" role="status">
+          <h3>Thank you — message sent.</h3>
+          <p>We read every inquiry and reply within two business days.</p>
+        </div>
+      } @else {
+        <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <h3>Send a commission inquiry</h3>
+
+          <label for="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            [(ngModel)]="model.name"
+            required
+            placeholder="Your name"
+          />
+
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            [(ngModel)]="model.email"
+            required
+            email
+            placeholder="you@example.com"
+          />
+
+          <label for="message">What are you dreaming up?</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            [(ngModel)]="model.message"
+            required
+            placeholder="Room, timber preference, rough timeline..."
+          ></textarea>
+
+          <button type="submit" class="btn-brass" [disabled]="contactForm.invalid">
+            Send inquiry
+          </button>
+        </form>
+      }
+    </div>
+  </div>
+</section>

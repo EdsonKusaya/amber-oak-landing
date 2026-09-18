@@ -1,0 +1,115 @@
+.hero {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  overflow: hidden;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero__copy h1 {
+  font-size: clamp(2.3rem, 1.7rem + 2.4vw, 3.6rem);
+  max-width: 14ch;
+  color: var(--sand-50);
+}
+
+.hero__lead {
+  font-size: 1.1rem;
+  max-width: 46ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 28px 0 48px;
+}
+
+.hero__facts {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(242, 237, 224, 0.15);
+}
+
+.hero__facts dt {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--brass-300);
+  font-weight: 600;
+}
+
+.hero__facts dd {
+  margin: 4px 0 0;
+  font-size: 0.86rem;
+  color: rgba(242, 237, 224, 0.65);
+}
+
+.hero__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__rings {
+  width: 100%;
+  max-width: 420px;
+}
+
+.ring {
+  fill: none;
+  stroke-width: 1.4;
+}
+
+.ring--1 {
+  stroke: rgba(219, 183, 126, 0.55);
+}
+
+.ring--2 {
+  stroke: rgba(168, 124, 63, 0.65);
+}
+
+.ring--3 {
+  stroke: rgba(219, 183, 126, 0.3);
+}
+
+.ring-core {
+  fill: var(--brass-300);
+}
+
+.ring-crack {
+  stroke: rgba(28, 19, 11, 0.55);
+  stroke-width: 1.5;
+}
+
+.ring-crack--short {
+  stroke: rgba(28, 19, 11, 0.4);
+}
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__art {
+    order: -1;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero__facts {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__facts {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+}

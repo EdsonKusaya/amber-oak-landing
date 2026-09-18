@@ -1,0 +1,49 @@
+<section id="services" class="section section--sand">
+  <div class="container">
+    <div class="section-heading">
+      <h2>What we build</h2>
+      <p>
+        Every piece starts as a conversation about how you'll actually use it,
+        then moves through our shop in solid walnut, white oak or ash.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <span class="service-card__icon">
+            @switch (service.icon) {
+              @case ('table') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 7H21M5 7V19M19 7V19M3 11H21" stroke-linecap="round" />
+                </svg>
+              }
+              @case ('shelf') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4H20V9H4V4ZM4 13H20V19H4V13Z" stroke-linejoin="round" />
+                </svg>
+              }
+              @case ('repair') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14.5 3.5L20.5 9.5L18 12L12 6L14.5 3.5ZM4 20L10.5 13.5M9 15L4 20L6 14.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              }
+              @case ('compass') {
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M15 9L13 13L9 15L11 11L15 9Z" stroke-linejoin="round" />
+                </svg>
+              }
+            }
+          </span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

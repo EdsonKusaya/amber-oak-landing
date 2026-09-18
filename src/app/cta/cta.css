@@ -1,0 +1,20 @@
+.cta {
+  background-color: var(--brass-500);
+  padding: 72px 0;
+}
+
+.cta__inner {
+  max-width: 620px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  color: var(--walnut-950);
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);
+}
+
+.cta p {
+  color: rgba(28, 19, 11, 0.75);
+  margin-bottom: 28px;
+}

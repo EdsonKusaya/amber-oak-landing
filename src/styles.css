@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Amber & Oak — global design tokens and base styles
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --walnut-950: #1c130b;
+  --walnut-900: #241708;
+  --walnut-800: #2f2010;
+  --walnut-700: #4a3520;
+  --brass-500: #a87c3f;
+  --brass-400: #c39a5c;
+  --brass-300: #dab77e;
+  --sand-100: #e7dfc8;
+  --sand-50: #f2ede0;
+  --paper: #fffdf9;
+  --forest-600: #445940;
+  --ink: #22170f;
+  --ink-soft: #574333;
+
+  /* Type */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --max-width: 1160px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+}
+
+p {
+  line-height: 1.65;
+  margin: 0 0 1em;
+  color: var(--ink-soft);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+@media (max-width: 767.98px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem);
+}
+
+.section-heading p {
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+
+.section--dark {
+  background-color: var(--walnut-900);
+  color: var(--sand-50);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark p {
+  color: var(--sand-50);
+}
+
+.section--dark p {
+  color: rgba(242, 237, 224, 0.78);
+}
+
+.section--sand {
+  background-color: var(--sand-50);
+}
+
+/* Buttons ---------------------------------------------------------------- */
+
+.btn-brass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  border-radius: var(--radius-sm);
+  background-color: var(--brass-500);
+  border: 1px solid var(--brass-500);
+  color: var(--walnut-950);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.btn-brass:hover {
+  background-color: var(--brass-400);
+  border-color: var(--brass-400);
+  color: var(--walnut-950);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.8em 1.65em;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  border: 1px solid rgba(242, 237, 224, 0.45);
+  color: var(--sand-50);
+  font-weight: 500;
+  font-size: 0.98rem;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--sand-50);
+  background-color: rgba(242, 237, 224, 0.08);
+  color: var(--sand-50);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  border-radius: var(--radius-sm);
+  background-color: var(--walnut-950);
+  border: 1px solid var(--walnut-950);
+  color: var(--sand-50);
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.btn-dark:hover {
+  background-color: var(--walnut-800);
+  color: var(--sand-50);
+  transform: translateY(-1px);
+}
+
+/* Focus visibility --------------------------------------------------------*/
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--brass-500);
+  outline-offset: 2px;
+}
+
+/* Reduced motion ---------------------------------------------------------*/
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
